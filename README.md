@@ -35,9 +35,16 @@
 ## 📸 界面导览 (Screenshots)
 
 <details open>
+  <summary><b>系统登录 (防暴力破解接入)</b></summary>
+  <p align="center">
+    <!-- Replace this placeholder with the actual image path, e.g., assets/login.png -->
+    <img src="assets/screenshots/login.png" alt="系统登录" width="800" />
+  </p>
+</details>
+
+<details open>
   <summary><b>账户管理 (多盘聚合视图)</b></summary>
   <p align="center">
-    <!-- Replace this placeholder with the actual image path, e.g., assets/account.png -->
     <img src="assets/screenshots/account.png" alt="账户管理" width="800" />
   </p>
 </details>
@@ -184,3 +191,18 @@ proxy_read_timeout 3600s;
 *   **[Quark2Baidu](https://github.com/pjx1314/Quark2Baidu)**：秒传逻辑参考。
 *   **[xinyue-search](https://github.com/675061370/xinyue-search)**：部分加密指纹提取参考。
 
+---
+
+## 💬 交流 & 讨论
+
+加入交流群，与更多开发者交流学习！
+
+📌 **添加微信** `rangli777` 添加时请备注来源（如果项目对你有所帮助，也可以请我喝杯咖啡 ☕️ ~）
+
+📌 **扫码加入交流群** 👇
+
+| 扫码加入交流群 | 支持项目 (请喝咖啡) |
+| :---: | :---: |
+| <img src="assets/screenshots/wechat_group.png" alt="交流群二维码" width="250" /> | <img src="assets/screenshots/donate.png" alt="赞赏支持" width="250" /> |
+
+> **温馨提示**：项目代码已免费开源，欢迎学习和交流。由于个人时间有限，暂不提供一对一的免费搭建指导。如有问题可在群内交流讨论，或私信咨询。
