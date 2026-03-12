@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+venv/
+.env
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+.npm
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Database
+*.sql.bak
+
+# Temp files
+*.tmp
+*.bak
+
+# 数据文件
+data/
+
+# Temp Data
+temp_data/
