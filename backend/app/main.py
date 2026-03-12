@@ -1,5 +1,6 @@
 import asyncio
 import os
+import shutil
 from .core.logger import logger
 try:
     import uvloop
@@ -25,6 +26,19 @@ from sqlalchemy.orm import Session
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """应用生命周期管理"""
+    # 启动时清理上一次异常遗留的临时数据
+    temp_dir = "temp_data"
+    if os.path.exists(temp_dir):
+        try:
+            shutil.rmtree(temp_dir)
+            logger.info("🧹 [App] 已清理临时挂载目录: temp_data")
+        except Exception as e:
+            logger.error(f"❌ [App] 清理临时目录失败: {e}")
+            
+    # （清理后重建）确保服务必须用到的子目录存在
+    os.makedirs(os.path.join(temp_dir, "transfer"), exist_ok=True)
+    os.makedirs(os.path.join(temp_dir, "download_state"), exist_ok=True)
+            
     # 启动时创建数据库表
     Base.metadata.create_all(bind=engine)
     
