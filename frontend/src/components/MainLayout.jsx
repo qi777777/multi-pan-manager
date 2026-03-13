@@ -91,9 +91,9 @@ export default function MainLayout() {
                 }}
             >
                 <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <div className="logo" style={{ padding: '16px', color: 'white', display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div className="logo" style={{ padding: '16px 12px', color: 'white', display: 'flex', alignItems: 'center', gap: 8 }}>
                         <img src="/logo.png" alt="Logo" style={{ width: 32, height: 32, borderRadius: 6 }} />
-                        {!collapsed && <span style={{ fontWeight: 'bold', fontSize: 16, whiteSpace: 'nowrap' }}>Multi-Pan Manager</span>}
+                        {!collapsed && <span style={{ fontWeight: 'bold', fontSize: 12, whiteSpace: 'nowrap', letterSpacing: '-0.2px' }}>Multi-Pan Manager</span>}
                     </div>
 
                     <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>

@@ -159,7 +159,7 @@ export default function LoginPage() {
                 }
 
                 :global(.ant-typography-secondary) {
-                    color: rgba(255, 255, 255, 0.45) !important;
+                    color: rgba(255, 255, 255, 0.7) !important;
                 }
 
                 :global(.ant-input-affix-wrapper), :global(.ant-input) {
