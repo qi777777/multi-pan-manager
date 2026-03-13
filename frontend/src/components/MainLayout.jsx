@@ -16,6 +16,7 @@ import {
 } from '@ant-design/icons'
 import { useAuth } from '../contexts/AuthContext'
 import api from '../services/api'
+import { hashPassword } from '../utils/crypto'
 
 const { Sider, Content } = Layout
 
@@ -44,15 +45,6 @@ export default function MainLayout() {
     const handleLogout = () => {
         logout()
         navigate('/login')
-    }
-
-    // 浏览器原生 SHA-256 加密 (复用)
-    const hashPassword = async (password) => {
-        const encoder = new TextEncoder()
-        const data = encoder.encode(password)
-        const hashBuffer = await window.crypto.subtle.digest('SHA-256', data)
-        const hashArray = Array.from(new Uint8Array(hashBuffer))
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
     }
 
     const handleUpdatePassword = async () => {

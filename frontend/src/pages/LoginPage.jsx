@@ -3,6 +3,7 @@ import { Form, Input, Button, Card, Typography, Space } from 'antd'
 import { UserOutlined, LockOutlined, CloudOutlined } from '@ant-design/icons'
 import { useAuth } from '../contexts/AuthContext'
 import { useNavigate, useLocation } from 'react-router-dom'
+import { hashPassword } from '../utils/crypto'
 
 const { Title, Text } = Typography
 
@@ -15,23 +16,19 @@ export default function LoginPage() {
     // 登录后重定向到之前的页面，或者根路径
     const from = location.state?.from?.pathname || '/'
 
-    // 浏览器原生 SHA-256 加密
-    const hashPassword = async (password) => {
-        const encoder = new TextEncoder()
-        const data = encoder.encode(password)
-        const hashBuffer = await window.crypto.subtle.digest('SHA-256', data)
-        const hashArray = Array.from(new Uint8Array(hashBuffer))
-        return hashArray.map(b => b.toString(16).padStart(2, '0')).join('')
-    }
-
     const onFinish = async (values) => {
         setLoading(true)
-        // 前端预哈希，防止明文出现在前端控制台或拦截器日志中
-        const hashedPassword = await hashPassword(values.password)
-        const success = await login(values.username, hashedPassword)
-        setLoading(false)
-        if (success) {
-            navigate(from, { replace: true })
+        try {
+            // 前端预哈希，支持 Secure 和 Non-Secure 上下文
+            const hashedPassword = await hashPassword(values.password)
+            const success = await login(values.username, hashedPassword)
+            if (success) {
+                navigate(from, { replace: true })
+            }
+        } catch (error) {
+            console.error('Login failed:', error)
+        } finally {
+            setLoading(false)
         }
     }
 
