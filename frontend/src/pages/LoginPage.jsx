@@ -38,10 +38,10 @@ export default function LoginPage() {
                 <Card variant="borderless" style={{ background: 'transparent' }}>
                     <div className="login-header">
                         <div className="login-logo">
-                            <CloudOutlined style={{ fontSize: 40, color: '#1890ff' }} />
+                            <img src="/logo.png" alt="Logo" style={{ width: '100%', height: '100%', borderRadius: 12 }} />
                         </div>
-                        <Title level={2} style={{ marginBottom: 0 }}>多网盘协同管理</Title>
-                        <Text type="secondary">请登录以访问控制台</Text>
+                        <Title level={2} style={{ marginBottom: 0 }}>Multi-Pan Manager</Title>
+                        <Text type="secondary">多网盘协同管理控制台</Text>
                     </div>
 
                     <Form

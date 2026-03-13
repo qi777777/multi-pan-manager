@@ -91,9 +91,9 @@ export default function MainLayout() {
                 }}
             >
                 <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-                    <div className="logo" style={{ padding: '24px 16px', color: 'white', display: 'flex', alignItems: 'center', gap: 12 }}>
-                        <CloudOutlined style={{ fontSize: 24, color: '#1890ff' }} />
-                        {!collapsed && <span style={{ fontWeight: 'bold', fontSize: 16 }}>多网盘管理</span>}
+                    <div className="logo" style={{ padding: '16px', color: 'white', display: 'flex', alignItems: 'center', gap: 12 }}>
+                        <img src="/logo.png" alt="Logo" style={{ width: 32, height: 32, borderRadius: 6 }} />
+                        {!collapsed && <span style={{ fontWeight: 'bold', fontSize: 16, whiteSpace: 'nowrap' }}>Multi-Pan Manager</span>}
                     </div>
 
                     <div style={{ flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>
